@@ -4,8 +4,17 @@
   "version": "0.1.1",
   "exports": {
     "./server": "./src/server/index.js",
-    "./client": "./src/client/index.js"
+    "./client": "./src/client/index.js",
+    "./": "./src/client/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winston0410/render-to-string-with-data.git"
+  },
+  "bugs": {
+    "url": "https://github.com/winston0410/render-to-string-with-data/issues"
+  },
+  "homepage": "https://github.com/winston0410/render-to-string-with-data#readme",
   "main": "./src/client/index.js",
   "author": "Hugo Sum",
   "license": "MIT",
