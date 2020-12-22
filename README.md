@@ -1,6 +1,8 @@
-# useServerSideEffect
+# renderToStringWithData
 
 A hook for the free and the brave to implement data hydration in SSR and SSG in React.
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/d5b79e7d757d61093fe9/maintainability)](https://codeclimate.com/github/winston0410/render-to-string-with-data/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d5b79e7d757d61093fe9/test_coverage)](https://codeclimate.com/github/winston0410/render-to-string-with-data/test_coverage) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8373d1b7781c45629fdf01a34c53d25f)](https://www.codacy.com/gh/winston0410/render-to-string-with-data/dashboard?utm_source=github.com&utm_medium=referral&utm_content=winston0410/render-to-string-with-data&utm_campaign=Badge_Grade)
 
 If you need to have data hydration in SSR and SSG, but you don't want to develop in **a heavily opinionated framework**, namely Next.js, Gatsby or React Static, this hook is for you.
 
