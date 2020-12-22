@@ -1,7 +1,7 @@
 {
   "name": "@blackblock/render-to-string-with-data",
   "description": "A hook for the free and the brave to implement data hydration in SSR and SSG in React.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "exports": {
     "./server": "./src/server/index.js",
     "./client": "./src/client/index.js"
@@ -26,9 +26,9 @@
     "flat-cache": "^3.0.4",
     "object.omit": "^3.0.0",
     "ramda": "^0.27.1",
-    "use-ssr": "^1.0.23",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "use-ssr": "^1.0.23"
   },
   "resolutions": {
     "preact": "^10.5.7",
