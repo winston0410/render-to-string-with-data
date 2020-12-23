@@ -10,7 +10,6 @@ const build = async () => {
     await service.build({
       entryPoints: ['./src/server/index.js'],
       bundle: true,
-      format: 'cjs',
       platform: 'node',
       external: ['react', 'react-dom'],
       outdir: path.resolve(distDir, 'server')

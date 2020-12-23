@@ -5,7 +5,7 @@
   "exports": {
     "./server": "./dist/server/index.js",
     "./client": "./dist/client/index.js",
-    "./": "./dist/client/index.js"
+    ".": "./dist/client/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,16 +28,17 @@
     "prepublish": "yarn build"
   },
   "dependencies": {
-    "flat-cache": "^3.0.4",
-    "object.omit": "^3.0.0",
-    "ramda": "^0.27.1",
-    "use-ssr": "^1.0.23"
+
   },
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "flat-cache": "^3.0.4",
+    "object.omit": "^3.0.0",
+    "ramda": "^0.27.1",
+    "use-ssr": "^1.0.23",
     "esbuild": "^0.8.26",
     "eslint": "^7.16.0",
     "eslint-config-standard": "^16.0.2",
