@@ -8,11 +8,11 @@ const build = async () => {
 
   try {
     await service.build({
-      entryPoints: ['./src/server/index.js'],
+      entryPoints: ['./src/server/index.js', './src/client/index.js'],
       bundle: true,
       platform: 'node',
       external: ['react', 'react-dom'],
-      outdir: path.resolve(distDir, 'server')
+      outdir: path.resolve(distDir, 'cjs')
     })
 
     await service.build({
@@ -21,7 +21,7 @@ const build = async () => {
       format: 'esm',
       platform: 'browser',
       external: ['react', 'react-dom'],
-      outdir: path.resolve(distDir, 'client')
+      outdir: path.resolve(distDir, 'esm', 'client')
     })
 
   } catch (e) {

@@ -59,10 +59,10 @@ typings/
 
 # next.js build output
 .next
-cache
 
 # OSX
 .DS_Store
+
 
 # Purescript
 output
@@ -78,16 +78,10 @@ output
 # Dist
 dist/*/*.js
 
-# Ignore bundled output from Purescript
-src/*/_*.js
-
-.vercel
-
-# Bundle stats json
-stats.json
-
-#Ignore webpack build cache
-.temp_cache
-
-#Ignore prefetch data
-*.fetch.json
+# Yarn 2
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
