@@ -3,9 +3,9 @@
   "description": "A hook for the free and the brave to implement data hydration in SSR and SSG in React.",
   "version": "0.1.4",
   "exports": {
-    "./server": "./src/server/index.js",
-    "./client": "./src/client/index.js",
-    "./": "./src/client/index.js"
+    "./server": "./dist/server/index.js",
+    "./client": "./dist/client/index.js",
+    "./": "./dist/client/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,16 +15,17 @@
     "url": "https://github.com/winston0410/render-to-string-with-data/issues"
   },
   "homepage": "https://github.com/winston0410/render-to-string-with-data#readme",
-  "main": "./src/client/index.js",
+  "main": "./dist/client/index.js",
   "author": "Hugo Sum",
   "license": "MIT",
   "private": false,
   "files": [
-    "src/"
+    "dist/"
   ],
   "scripts": {
     "dev": "yarn start",
-    "build": "node build.js"
+    "build": "node build.js",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "flat-cache": "^3.0.4",

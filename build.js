@@ -16,6 +16,15 @@ const build = async () => {
       outdir: path.resolve(distDir, 'server')
     })
 
+    await service.build({
+      entryPoints: ['./src/client/index.js'],
+      bundle: true,
+      format: 'esm',
+      platform: 'browser',
+      external: ['react', 'react-dom'],
+      outdir: path.resolve(distDir, 'client')
+    })
+
   } catch (e) {
     console.log(e);
   } finally {
