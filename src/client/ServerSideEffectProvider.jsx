@@ -1,12 +1,17 @@
 import React, { useContext, useState } from 'react'
 import useSSR from 'use-ssr'
-// const R = require('ramda')
+import joli from '@blackblock/joli'
+import basicCharList from '@blackblock/css-chars'
+
+const generator = joli({
+  chars: basicCharList
+})
+
 const ServerSideEffectContext = React.createContext({})
 const ServerSideEffectProvider = ServerSideEffectContext.Provider
 
 function useServerSideEffect ({
   callback,
-  key,
   clientSideState,
   cacheDuration = false
 }) {
@@ -16,6 +21,7 @@ function useServerSideEffect ({
   }
 
   if (isServer) {
+    const key = generator.next().value
     const cxt = useContext(ServerSideEffectContext)
     // console.log('check cxt', cxt)
     if (cxt[key]) {
