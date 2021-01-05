@@ -12,15 +12,15 @@
   "exports": {
     "./server": {
       "require": "./dist/cjs/server/index.js",
-      "default": "./dist/esm/server/index.js"
+      "default": "./dist/cjs/server/index.js"
     },
     "./client": {
       "require": "./dist/cjs/client/index.js",
-      "default": "./dist/esm/client/index.js"
+      "default": "./dist/cjs/client/index.js"
     },
     ".": {
       "require": "./dist/cjs/client/index.js",
-      "default": "./dist/esm/client/index.js"
+      "default": "./dist/cjs/client/index.js"
     }
   },
   "repository": {
@@ -31,7 +31,6 @@
     "url": "https://github.com/winston0410/render-to-string-with-data/issues"
   },
   "homepage": "https://github.com/winston0410/render-to-string-with-data#readme",
-  "main": "./dist/client/index.js",
   "author": "Hugo Sum",
   "license": "MIT",
   "private": false,
@@ -39,9 +38,8 @@
     "dist/"
   ],
   "scripts": {
-    "dev": "yarn start",
+    "dev": "npx rollup -c -w",
     "build": "npx rollup -c",
-    "build:esbuild": "node build.js",
     "prepublish": "yarn build"
   },
   "dependencies": {},
@@ -50,7 +48,9 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "esbuild": "^0.8.29",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "eslint": "^7.17.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-chai-expect": "^2.2.0",
@@ -67,6 +67,7 @@
     "ramda": "^0.27.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "rollup": "^2.35.1",
     "use-ssr": "^1.0.23"
   },
   "resolutions": {

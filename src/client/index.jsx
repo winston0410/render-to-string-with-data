@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react'
-import useSSR from 'use-ssr'
-// import joli from '@blackblock/joli'
-// import basicCharList from '@blackblock/css-chars'
-//
-// const generator = joli({
-//   chars: basicCharList
-// })
+import joli from '@blackblock/joli'
+import basicCharList from '@blackblock/css-chars'
+const {
+  useSSR
+} = require('use-ssr')
+
+const generator = joli({
+  chars: basicCharList
+})
 
 const ServerSideEffectContext = React.createContext({})
 const ServerSideEffectProvider = ServerSideEffectContext.Provider
@@ -13,7 +15,8 @@ const ServerSideEffectProvider = ServerSideEffectContext.Provider
 function useServerSideEffect ({
   callback,
   clientSideState,
-  cacheDuration = false
+  cacheDuration = false,
+  key = generator.next().value
 }) {
   const { isBrowser, isServer, isNative } = useSSR()
   if (isBrowser) {
@@ -21,8 +24,6 @@ function useServerSideEffect ({
   }
 
   if (isServer) {
-    // const key = generator.next().value
-    const key = 'test'
     const cxt = useContext(ServerSideEffectContext)
     // console.log('check cxt', cxt)
     if (cxt[key]) {

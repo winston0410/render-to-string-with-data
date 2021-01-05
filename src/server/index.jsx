@@ -1,14 +1,14 @@
 import React from 'react'
-import { renderToString, renderToStaticMarkup } from 'react-dom/server'
 import {
   ServerSideEffectProvider
-} from '../client/index'
+} from '@blackblock/render-to-string-with-data'
 import {
   cacheSSEData
 } from './utilities/cacheServerSideContext'
 import {
   mergeByCondition
 } from './utilities/helper'
+const { renderToString, renderToStaticMarkup } = require('react-dom/server')
 const omit = require('object.omit')
 
 const R = require('ramda')
