@@ -11,7 +11,8 @@
   ],
   "exports": {
     "./server": {
-      "require": "./dist/cjs/server/index.js"
+      "require": "./dist/cjs/server/index.js",
+      "default": "./dist/esm/server/index.js"
     },
     "./client": {
       "require": "./dist/cjs/client/index.js",
@@ -39,7 +40,8 @@
   ],
   "scripts": {
     "dev": "yarn start",
-    "build": "node build.js",
+    "build": "npx rollup -c",
+    "build:esbuild": "node build.js",
     "prepublish": "yarn build"
   },
   "dependencies": {},
