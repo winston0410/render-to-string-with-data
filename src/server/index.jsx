@@ -1,13 +1,13 @@
 import React from 'react'
 import {
-  ServerSideEffectProvider
-} from '@blackblock/render-to-string-with-data'
-import {
   cacheSSEData
 } from './utilities/cacheServerSideContext'
 import {
   mergeByCondition
 } from './utilities/helper'
+const {
+  ServerSideEffectProvider
+} = require('@blackblock/render-to-string-with-data')
 const { renderToString, renderToStaticMarkup } = require('react-dom/server')
 const omit = require('object.omit')
 

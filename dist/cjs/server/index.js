@@ -3,7 +3,6 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var renderToStringWithData$1 = require('@blackblock/render-to-string-with-data');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -68,6 +67,10 @@ const mergeByCondition = (obj1, obj2) => {
 // }
 
 const {
+  ServerSideEffectProvider
+} = require('@blackblock/render-to-string-with-data');
+
+const {
   renderToString,
   renderToStaticMarkup
 } = require('react-dom/server');
@@ -84,7 +87,7 @@ async function renderToStringWithData(App, cachePath = undefined) {
     const context = {
       sse: {}
     };
-    renderToStaticMarkup( /*#__PURE__*/React__default['default'].createElement(renderToStringWithData$1.ServerSideEffectProvider, {
+    renderToStaticMarkup( /*#__PURE__*/React__default['default'].createElement(ServerSideEffectProvider, {
       value: context
     }, App));
     const sseEffect = context.sse;
@@ -99,7 +102,7 @@ async function renderToStringWithData(App, cachePath = undefined) {
       contextKeys: promisesKey
     });
     const contextWithData = R$1.zipObj(promisesKey, resolvedData);
-    const markupWithData = renderToString( /*#__PURE__*/React__default['default'].createElement(renderToStringWithData$1.ServerSideEffectProvider, {
+    const markupWithData = renderToString( /*#__PURE__*/React__default['default'].createElement(ServerSideEffectProvider, {
       value: contextWithData
     }, App));
     return {
